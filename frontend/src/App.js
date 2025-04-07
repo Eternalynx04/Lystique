@@ -1,21 +1,15 @@
-import React, { useState, useEffect } from 'react';
+// src/App.js
+import React from "react";
+import Navbar from "./layout/navbar"; 
+import Feed from "./pages/feed";      
 
-function App() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    fetch('http://localhost:5000/')
-      .then((res) => res.text())
-      .then((data) => setMessage(data))
-      .catch((error) => console.error('Error fetching from backend:', error));
-  }, []);
-
+const App = () => {
   return (
-    <div className="App">
-      <h1>Frontend</h1>
-      <p>Message from backend: {message}</p>
+    <div>
+      <Navbar />
+      <Feed />
     </div>
   );
-}
+};
 
 export default App;
